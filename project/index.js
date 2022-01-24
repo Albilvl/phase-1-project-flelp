@@ -19,3 +19,5 @@ function renderCharacters(characters) {
     
   })
 }
+
+// checking
