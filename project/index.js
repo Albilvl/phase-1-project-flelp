@@ -6,15 +6,23 @@ fetch("https://api.disneyapi.dev/characters")
     })
   })
 
-function renderCharacters(characters) {
+function renderCharacters(character) {
+
   const characterBar = document.querySelector(`#character-bar`)
+
   const images = document.createElement(`img`)
+
   images.src = character.imageUrl
   images.style.cursor = `pointer`
+
   characterBar.appendChild(images)
+
   images.addEventListener(`click`,()=>{
-    document.querySelector(`#name`)= character.name
+
+    document.querySelector(`#name`).textContent= character.name
+
     document.querySelector(`#image`).src = character.imageUrl
+    
     document.querySelector(`#image`).alt = character.name
     
   })
