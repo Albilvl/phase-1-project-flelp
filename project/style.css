@@ -15,12 +15,10 @@ html, body {
 }
 
 #character-bar {
-  height: 15vh;
-  background: rgb(219, 214, 214);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding-bottom: 3vh;
+    display: flex;
+  overflow-x: auto;
+  margin: 1rem 0;
+  max-width: calc(100vw - 2rem);
 }
 
 #character-bar span {
