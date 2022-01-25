@@ -4,15 +4,8 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <div class="logo">
-      <h1>Flisney Ranker!</h1>
-    </div>
-
-    <div id="character-bar">
-      <!-- show top characters names here -->
-    </div>
-
-    <div class="characterInfo">
+    <main>
+      <div class="characterInfo">
       <div id="detailed-info">
         <p id="name">Character Name</p>
         <img
@@ -22,10 +15,14 @@
         <!-- display character image here -->
         <h4>Total Likes <span id="like-count"></span></h4>
         <form id="votes-form">
-          <input type="text" placeholder="Stan your favorite character!!" id="likes" name="likes" />
-          <input type="submit" value="Add a Like" />
+          <button>Like ♥</button>
+          <input type="text" placeholder="Search your favorite character!" id="likes" name="likes" />
+          <input type="submit" value="Search" />
         </form> 
-        <!-- <button id="reset-btn">Reset Like</button> -->
+      </div>
+    </main>
+    <div id="character-bar">
+      <!-- show top characters names here -->
     </div>
     <script src="index.js"></script>
   </body>
