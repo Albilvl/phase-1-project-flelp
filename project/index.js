@@ -20,7 +20,7 @@ fetch("https://api.disneyapi.dev/characters")
 })
 
 function renderListNames(character) {
-const list = document.querySelector(`myUL`)
+const list = document.querySelector(`#myUL`)
 const characterNames = document.createElement(`li`)
 
 characterNames.textContent = character.name
