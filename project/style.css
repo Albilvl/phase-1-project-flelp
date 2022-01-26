@@ -21,7 +21,7 @@ body{
   color:white ;
 }
 #character-bar {
-  height: 29vh;
+  height: 12vh;
   position: absolute;
   bottom: 0;
   display: flex;
