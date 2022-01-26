@@ -42,13 +42,15 @@ function renderCharacters(character) {
 
   })
 }
+
+// like button variables and functions
 const likeContainer = document.querySelector("#like-banner")
 const likeBtn = document.querySelector("#likeBtn")
 likeBtn.addEventListener("click", addLike)
 
 function addLike(){
   let likeCount = document.querySelector("like-count")
-  addOne = parseInt(likeCount) +1
+  addOne = parseInt(likeCount.textContent) +1
   likeCount.textContent = addOne
 }
 // checking
