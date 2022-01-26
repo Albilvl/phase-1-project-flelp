@@ -45,8 +45,34 @@ const likeBtn = document.querySelector("#likeBtn")
 likeBtn.addEventListener("click", addLike)
 
 function addLike(){
-let likeCount = document.querySelector("like-count")
+let likeCount = document.querySelector("#like-count")
 addOne = parseInt(likeCount.textContent) +1
 likeCount.textContent = addOne
 }
 // checking
+
+
+
+
+// testing out search
+
+function search() {
+  // Declare variables
+
+  const input = document.querySelector('#myInput');
+  const filter = input.value.toUpperCase();
+  const ul = document.querySelector("#myUL");
+  const li = ul.getElementsByTagName('li');
+  
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    // a = li[i].getElementsByTagName("a")[0];
+    txtValue = li[i].textContent || li[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}

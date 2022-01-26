@@ -13,12 +13,13 @@
           src=""
           alt="" />
         <!-- display character image here -->
-        <h4 id="like-banner">Total Likes: <span id="like-count">0 <button id="likeBtn">Like ♥</button></span></h4>
+        <h4 id="like-banner">Total Likes: <span id="like-count">0 </span>
+          <button id="likeBtn">Like ♥</button>
+        </h4>
        
-        <input type="text" id="myInput"  placeholder="Search for your favorite character..">
-    
-    <ul id="myUL">
-    </ul>- show top characters names here -->
+        <input type="text" id="myInput" onkeyup="search()" placeholder="Search for your favorite character..">    
+         <ul id="myUL">
+        </ul>
     </main>
 
     <!-- <div id="character-bar">
