@@ -16,12 +16,7 @@ body{
     margin:0;
 }
 
-.logo{
-  text-align: center;
-  background-color: rgba(7, 140, 202, 0.781);
-  color: white;
-  padding: 0.5em;
-}
+
 #name{
   color:white ;
 }
@@ -33,21 +28,12 @@ body{
   overflow-x: auto;
   margin: 1rem 0;
   max-width: calc(100vw - 2rem);
+  border:double;
+  border-radius: 45px;
 }
-
-#character-bar span {
-  padding: 1%;
-  height: 80%;
-  width: 8vw;
-  display: flex;
-  color: black;
-  justify-content: center;
-  font-size: 2vh;
-  align-items: center;
-  border-radius: 2em;
-  border: 7px solid black;
+#like-banner{
+  color:white
 }
-
 .characterInfo{
   height: 550px;
   padding: 30px;
@@ -71,7 +57,6 @@ input[type="text"] {
 #image{
   width: 300px;
   height: 300px;
-}
-#name{
-  color: black;
+  border-radius: 20px;
+border: dotted
 }
