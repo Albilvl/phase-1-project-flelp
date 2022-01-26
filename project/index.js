@@ -1,46 +1,42 @@
 
 
 fetch("https://api.disneyapi.dev/characters")
-  .then(res => res.json())
-  .then(characterObj => {
-    const page = characterObj.nextPage
-    for (i = 2; i < 150; i++) {
-      fetch(`https://api.disneyapi.dev/characters?page=${i}`)
-        .then(res => res.json())
-        .then(page2data => {
-          page2data.data.forEach(character => {
-            renderCharacters(character)
-          })
+.then(res => res.json())
+.then(characterObj => {
+  const page = characterObj.nextPage
+  for (i = 2; i < 150; i++) {
+    fetch(`https://api.disneyapi.dev/characters?page=${i}`)
+      .then(res => res.json())
+      .then(page2data => {
+        page2data.data.forEach(character => {
+          renderListNames(character)
         })
+      })
 
-    }
-    characterObj.data.forEach(character => {
-      renderCharacters(character)
-    })
+  }
+  characterObj.data.forEach(character => {
+    renderListNames(character)
   })
+})
 
-function renderCharacters(character) {
+function renderListNames(character) {
+const list = document.querySelector(`myUL`)
+const characterNames = document.createElement(`li`)
 
-  const characterBar = document.querySelector(`#character-bar`)
+characterNames.textContent = character.name
+console.log(characterNames)
+characterNames.style.cursor = `pointer`
 
-  const images = document.createElement(`img`)
+list.appendChild(characterNames)
+characterNames.addEventListener(`click`, () => {
 
-  images.src = character.imageUrl
-  images.style.width = `10vw`
-  images.style.height = `10vh`
-  images.style.cursor = `pointer`
+  document.querySelector(`#name`).textContent = character.name
 
-  characterBar.appendChild(images)
+  document.querySelector(`#image`).src = character.imageUrl
 
-  images.addEventListener(`click`, () => {
+  document.querySelector(`#image`).alt = character.name
 
-    document.querySelector(`#name`).textContent = character.name
-
-    document.querySelector(`#image`).src = character.imageUrl
-
-    document.querySelector(`#image`).alt = character.name
-
-  })
+})
 }
 
 // like button variables and functions
@@ -49,8 +45,8 @@ const likeBtn = document.querySelector("#likeBtn")
 likeBtn.addEventListener("click", addLike)
 
 function addLike(){
-  let likeCount = document.querySelector("like-count")
-  addOne = parseInt(likeCount.textContent) +1
-  likeCount.textContent = addOne
+let likeCount = document.querySelector("like-count")
+addOne = parseInt(likeCount.textContent) +1
+likeCount.textContent = addOne
 }
 // checking
