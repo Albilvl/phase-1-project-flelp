@@ -10,6 +10,7 @@ fetch("https://api.disneyapi.dev/characters")
       .then(page2data => {
         page2data.data.forEach(character => {
           renderListNames(character)
+        
         })
       })
 
@@ -18,25 +19,25 @@ fetch("https://api.disneyapi.dev/characters")
     renderListNames(character)
   })
 })
-
+// for like objects
 const likesArr = [];
 
 function renderListNames(character) {
 const list = document.querySelector(`#myUL`)
 const characterNames = document.createElement(`li`)
 
-
+// creates like object
 const likeObj = {name: character.name, likes: 0}
 likesArr.push(likeObj)
 
 characterNames.textContent = character.name
-console.log(characterNames)
 characterNames.style.cursor = `pointer`
 
 list.appendChild(characterNames)
 characterNames.addEventListener(`click`, () => {
-
+// appending like object
   const likeRec = likesArr.find(like => like.name === character.name)
+  console.log(likeRec)
   document.querySelector("#like-count").textContent = likeRec.likes
 
   document.querySelector(`#name`).textContent = character.name
@@ -53,12 +54,20 @@ const likeContainer = document.querySelector("#like-banner")
 const likeBtn = document.querySelector("#likeBtn")
 likeBtn.addEventListener("click", addLike)
 
+//
+
+
 function addLike(){
-let likeCount = document.querySelector("#like-count")
-addOne = parseInt(likeCount.textContent) +1
-likeCount.textContent = addOne
+  let name = document.querySelector("#name").textContent
+  let likeCount = document.querySelector("#like-count")
+// addOne = parseInt(likeCount.textContent) +1
+  const likeRec = likesArr.find(like => like.name === name)
+  let addOne = likeRec.likes +1
+  
+  likeCount.textContent = addOne
+  likeRec.likes = addOne
 }
-// checking
+
 
 
 
