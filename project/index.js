@@ -17,8 +17,22 @@ fetch("https://api.disneyapi.dev/characters")
   }
   characterObj.data.forEach(character => {
     renderListNames(character)
+
+    loadFirstCharacter (character)
+
+    
   })
 })
+
+
+function loadFirstCharacter(character)  {
+  const firstCharName = document.querySelector("#name"
+  )
+   const firstCharImg = document.querySelector("#image")
+  firstCharName.textContent = character[0].name
+  firstCharImg.src = character[0].imageUrl
+}
+
 // for like objects
 const likesArr = [];
 
