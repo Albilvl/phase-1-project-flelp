@@ -19,9 +19,15 @@ fetch("https://api.disneyapi.dev/characters")
   })
 })
 
+const likesArr = [];
+
 function renderListNames(character) {
 const list = document.querySelector(`#myUL`)
 const characterNames = document.createElement(`li`)
+
+
+const likeObj = {name: character.name, likes: 0}
+likesArr.push(likeObj)
 
 characterNames.textContent = character.name
 console.log(characterNames)
@@ -29,6 +35,9 @@ characterNames.style.cursor = `pointer`
 
 list.appendChild(characterNames)
 characterNames.addEventListener(`click`, () => {
+
+  const likeRec = likesArr.find(like => like.name === character.name)
+  document.querySelector("#like-count").textContent = likeRec.likes
 
   document.querySelector(`#name`).textContent = character.name
 
