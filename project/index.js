@@ -3,6 +3,7 @@
 fetch("https://api.disneyapi.dev/characters")
 .then(res => res.json())
 .then(characterObj => {
+  loadFirstCharacter (characterObj.data)
   const page = characterObj.nextPage
   for (i = 2; i < 150; i++) {
     fetch(`https://api.disneyapi.dev/characters?page=${i}`)
@@ -18,7 +19,7 @@ fetch("https://api.disneyapi.dev/characters")
   characterObj.data.forEach(character => {
     renderListNames(character)
 
-    loadFirstCharacter (character)
+    
 
     
   })
